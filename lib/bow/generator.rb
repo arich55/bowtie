@@ -6,6 +6,7 @@ class Bow::Generator
   def make
     case @task
     when "setup"
+        # Bow::Setup.new
         "setting up bow tie..."
     when "model"
         "generating model..."
@@ -14,5 +15,9 @@ class Bow::Generator
     else
         "bow tie!"
     end
+  end
+
+  def load_generator(_generator)
+
   end
 end

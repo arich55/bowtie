@@ -16,3 +16,4 @@ class Bow
 end
 
 require 'bow/generator'
+require 'bow/setup'

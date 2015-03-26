@@ -2,7 +2,7 @@ require 'test/unit'
 require 'bow'
 
 class BowTest < Test::Unit::TestCase
-  def test_generate_model
+  def test_generate_setup
     assert_equal "setting up bow tie...",
       Bow.init("tie", "setup")
   end
