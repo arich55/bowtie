@@ -7,9 +7,9 @@ class BowTest < Test::Unit::TestCase
       Bow.init("tie", "setup")
   end
 
-  def test_generate_model
-    assert_equal "generating model...",
-      Bow.init("tie", "model")
+  def test_generate_factory
+    assert_equal "generating factory...",
+      Bow.init("tie", "factory")
   end
 
   def test_generate_anything

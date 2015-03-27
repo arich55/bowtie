@@ -5,19 +5,26 @@ class Bow::Generator
 
   def make
     case @task
-    when "setup"
-        # Bow::Setup.new
-        "setting up bow tie..."
-    when "model"
-        "generating model..."
-    when "controller"
-        "generating controller..."
-    else
-        "bow tie!"
+    when "setup"  then Bow::Setup.test
+    else          load_generator(@task)
     end
   end
 
   def load_generator(_generator)
+    begin
+    generator = Bow::Factory::build(_generator)
+    generator.run
+    rescue NoMethodError
+      "bow tie!"
+    end
+  end
+end
 
+class Bow::Factory
+  def self.build( generator ) 
+    case generator
+    when "factory"      then Bow::Generator::Factory.new
+    when "controller"   then Bow::Generator::Controller.new
+    end
   end
 end

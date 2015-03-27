@@ -15,5 +15,10 @@ class Bow
   end
 end
 
+# Require base
 require 'bow/generator'
 require 'bow/setup'
+
+# Require additional generators
+Dir[File.dirname(__FILE__) + '/generators/*.rb'].each {|file| require file }
+
