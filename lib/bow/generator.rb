@@ -1,6 +1,7 @@
 class Bow::Generator
   def initialize(action, task)
     @task = task
+    @args = ""
   end
 
   def make
@@ -12,7 +13,7 @@ class Bow::Generator
 
   def load_generator(_generator)
     begin
-    generator = Bow::Factory::build(_generator)
+    generator = Bow::Factory::build(_generator, @args)
     generator.run
     rescue NoMethodError
       "bow tie!"
@@ -21,10 +22,10 @@ class Bow::Generator
 end
 
 class Bow::Factory
-  def self.build( generator ) 
+  def self.build( generator, args ) 
     case generator
     when "factory"      then Bow::Generator::Factory.new
-    when "controller"   then Bow::Generator::Controller.new
+    when "controller"   then Bow::Generator::Controller.new args
     end
   end
 end

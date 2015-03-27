@@ -1,6 +1,6 @@
 class Bow::Generator::Controller < Bow::Generator::Base
 
-  def initialize 
+  def initialize( args = "")  
     run
   end
 

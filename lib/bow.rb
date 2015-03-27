@@ -9,7 +9,7 @@ class Bow
   # Arguments:
   #   Command: (String)
 
-  def self.init( action = "tie", task = "controler" )
+  def self.init( action = "tie", task = "controller" )
     generator = Generator.new(action, task)
     generator.make
   end
